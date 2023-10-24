@@ -6,6 +6,7 @@ import {
   View,
   Platform,
 } from "react-native";
+import MealDetails from "./MealDetails";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -33,11 +34,16 @@ function MealItem({
             <Image style={styles.image} source={{ uri: imageUrl }} />
             <Text style={styles.title}>{title}</Text>
           </View>
-          <View style={styles.details}>
+          {/* <View style={styles.details}>
             <Text style={styles.detailItem}>{duration}mins</Text>
             <Text style={styles.detailItem}>{complexity.toUpperCase()}</Text>
             <Text style={styles.detailItem}>{affordability.toUpperCase()}</Text>
-          </View>
+          </View> */}
+          <MealDetails
+            complexity={complexity}
+            duration={duration}
+            affordability={affordability}
+          />
         </View>
       </Pressable>
     </View>
